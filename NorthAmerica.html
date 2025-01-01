@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Types for North America</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            color: #333;
+        }
+        header {
+            background: url('https://via.placeholder.com/1920x400?text=Visa+Types+for+North+America') no-repeat center center/cover;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .search-bar {
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            max-width: 600px;
+            padding: 0.75rem;
+            border: 2px solid #80deea;
+            border-radius: 12px;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar input:focus {
+            outline: none;
+            border-color: #00796b;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .country {
+            margin-bottom: 2rem;
+            border-bottom: 2px dashed #80deea;
+            padding-bottom: 1rem;
+        }
+        .country h2 {
+            color: #006064;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .visa-types {
+            list-style-type: none;
+            padding: 0;
+        }
+        .visa-types li {
+            background-color: #ffffff;
+            margin: 0.75rem 0;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .visa-types li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .visa-types li a {
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .visa-types li a:hover {
+            color: #004d40;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Visa Types for North America</h1>
+        <p>Explore visa requirements for 23 North American countries</p>
+    </header>
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search for a country...">
+    </div>
+    <div class="container" id="visa-container">
+        <!-- Countries and their visa types will be dynamically added here -->
+    </div>
+    <footer>
+        <p>&copy; 2025 Visa Information Portal. All Rights Reserved.</p>
+    </footer>
+         <script>
+        const countries = [
+            { name: "United States", visaTypes: [
+                { type: "Tourist Visa", link: "https://travel.state.gov/content/travel/en/us-visas/tourism-visit.html" },
+                { type: "Work Visa", link: "https://travel.state.gov/content/travel/en/us-visas/employment.html" },
+                { type: "Student Visa", link: "https://travel.state.gov/content/travel/en/us-visas/study.html" }
+            ] },
+            { name: "Canada", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada.html" },
+                { type: "Study Permit", link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html" },
+                { type: "Work Permit", link: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html" }
+            ] },
+            { name: "Mexico", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.gob.mx/semar/en" },
+                { type: "Temporary Resident Visa", link: "https://www.gob.mx/semar/en" },
+                { type: "Permanent Resident Visa", link: "https://www.gob.mx/semar/en" }
+            ] },
+            { name: "Bahamas", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.bahamas.com/travelupdates" },
+                { type: "Work Permit", link: "https://www.bahamas.gov.bs/wps/portal/public/jobs" }
+            ] },
+            { name: "Barbados", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.foreign.gov.bb" },
+                { type: "Work Visa", link: "https://www.foreign.gov.bb" }
+            ] },
+            { name: "Belize", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.belize.gov.bz" },
+                { type: "Work Permit", link: "https://www.belize.gov.bz" }
+            ] },
+            { name: "Costa Rica", visaTypes: [
+                { type: "Tourist Visa", link: "https://migracion.go.cr" },
+                { type: "Work Visa", link: "https://migracion.go.cr" }
+            ] },
+            { name: "Cuba", visaTypes: [
+                { type: "Tourist Card", link: "http://cubatravel.cu" },
+                { type: "Business Visa", link: "http://cubatravel.cu" }
+            ] },
+            { name: "Dominican Republic", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.consuladord.com" },
+                { type: "Residency Visa", link: "https://www.consuladord.com" }
+            ] },
+            { name: "El Salvador", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.rree.gob.sv" },
+                { type: "Work Permit", link: "https://www.rree.gob.sv" }
+            ] },
+            { name: "Guatemala", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.minex.gob.gt" },
+                { type: "Work Visa", link: "https://www.minex.gob.gt" }
+            ] },
+            { name: "Haiti", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.embassyhaiti.org" },
+                { type: "Work Visa", link: "https://www.embassyhaiti.org" }
+            ] },
+            { name: "Honduras", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.sre.gob.hn" },
+                { type: "Work Permit", link: "https://www.sre.gob.hn" }
+            ] },
+            { name: "Jamaica", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.pica.gov.jm" },
+                { type: "Work Visa", link: "https://www.pica.gov.jm" }
+            ] },
+            { name: "Nicaragua", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.migob.gob.ni" },
+                { type: "Work Visa", link: "https://www.migob.gob.ni" }
+            ] },
+            { name: "Panama", visaTypes: [
+                { type: "Tourist Visa", link: "https://www.migracion.gob.pa" },
+                { type: "Work Visa", link: "https://www.migracion.gob.pa" }
+            ] },
+            { name: "Saint Kitts and Nevis", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.gov.kn" },
+                { type: "Work Permit", link: "https://www.gov.kn" }
+            ] },
+            { name: "Saint Lucia", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.stlucia.org" },
+                { type: "Work Visa", link: "https://www.stlucia.org" }
+            ] },
+            { name: "Saint Vincent and the Grenadines", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.gov.vc" },
+                { type: "Work Permit", link: "https://www.gov.vc" }
+            ] },
+            { name: "Trinidad and Tobago", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.immigration.gov.tt" },
+                { type: "Work Permit", link: "https://www.immigration.gov.tt" }
+            ] },
+            { name: "Antigua and Barbuda", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.ab.gov.ag" },
+                { type: "Work Permit", link: "https://www.ab.gov.ag" }
+            ] },
+            { name: "Grenada", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.gov.gd" },
+                { type: "Work Permit", link: "https://www.gov.gd" }
+            ] },
+            { name: "Dominica", visaTypes: [
+                { type: "Visitor Visa", link: "https://www.dominica.gov.dm" },
+                { type: "Work Permit", link: "https://www.dominica.gov.dm" }
+            ] }
+        ];
+
+        const container = document.getElementById('visa-container');
+        const searchInput = document.getElementById('search');
+
+        function displayCountries(filter = "") {
+            container.innerHTML = ""; // Clear existing content
+            const filteredCountries = countries.filter(country =>
+                country.name.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            if (filteredCountries.length === 0) {
+                container.innerHTML = "<p>No countries match your search.</p>";
+                return;
+            }
+
+            filteredCountries.forEach(country => {
+                const countryDiv = document.createElement('div');
+                countryDiv.classList.add('country');
+
+                const countryName = document.createElement('h2');
+                countryName.textContent = country.name;
+
+                const visaList = document.createElement('ul');
+                visaList.classList.add('visa-types');
+
+                country.visaTypes.forEach(visa => {
+                    const visaItem = document.createElement('li');
+                    const visaLink = document.createElement('a');
+                    visaLink.href = visa.link;
+                    visaLink.target = '_blank';
+                    visaLink.textContent = visa.type;
+                    visaItem.appendChild(visaLink);
+                    visaList.appendChild(visaItem);
+                });
+
+                countryDiv.appendChild(countryName);
+                countryDiv.appendChild(visaList);
+                container.appendChild(countryDiv);
+            });
+        }
+
+        // Initialize with all countries
+        displayCountries();
+
+        // Add search functionality
+        searchInput.addEventListener('input', (event) => {
+            const searchTerm = event.target.value;
+            displayCountries(searchTerm);
+        });
+    </script>
+</body>
+</html>
